@@ -6,6 +6,7 @@ import SignIn from "./pages/SignIn";
 import Search from "./pages/Search";
 import SignUp from "./pages/SignUp";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/login' element={<SignIn />} />
-        <Route path='/logout' element={<SignUp />} />
+        <Route path='/sign-up' element={<SignUp />} />
         <Route path='/search' element={<Search />} />
         <Route path='*' element={<Home />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
