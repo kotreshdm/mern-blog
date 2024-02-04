@@ -1,7 +1,8 @@
 import React from "react";
+import { Button } from "flowbite-react";
 
 function Home() {
-  return <div>Home</div>;
+  return <Button>PAge not found</Button>;
 }
 
 export default Home;

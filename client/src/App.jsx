@@ -1,14 +1,16 @@
 // import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import { About } from "./About";
-import SignIn from "./SignIn";
-import Search from "./Search";
-import SignUp from "./SignUp";
+import { About } from "./pages/About";
+import SignIn from "./pages/SignIn";
+import Search from "./pages/Search";
+import SignUp from "./pages/SignUp";
+import Header from "./components/Header";
 
 function App() {
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
