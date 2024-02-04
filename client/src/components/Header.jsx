@@ -29,7 +29,7 @@ function Header() {
         <AiOutlineSearch />
       </Button>
       <div className='flex gap-2 md:order-2'>
-        <Link to='/login'>
+        <Link to='/sign-in'>
           <Button gradientDuoTone='purpleToBlue' outline>
             Sign In
           </Button>

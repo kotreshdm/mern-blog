@@ -1,12 +1,12 @@
 import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [formData, setFormData] = useState({
-    username: "kotresh123",
-    email: "kotreshdm@gmail.com123",
-    password: "Dell@2323",
+    username: "",
+    email: "",
+    password: "",
   });
   const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -97,6 +97,12 @@ function SignUp() {
               )}
             </Button>
           </form>
+          <div className='flex gap-2 text-sm mt-5'>
+            <span>Have an account?</span>
+            <Link to='/sign-in' className='text-blue-500'>
+              Sign In
+            </Link>
+          </div>
           {errorMessage && (
             <Alert className='mt-5' color='failure'>
               {errorMessage}
