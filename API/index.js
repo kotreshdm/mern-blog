@@ -1,7 +1,22 @@
 import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+import userRoutes from "./routes/user.route.js";
+
+dotenv.config();
+
+const PORT = 3000;
 
 const app = express();
 
-app.listen(3000, () => {
-  console.log("Server is running on port 3000!!");
+mongoose
+  .connect(process.env.MONGO)
+  .then(() => console.log("Mango db Connected!"))
+  .catch((err) => console.log(err));
+
+app.listen(PORT, () => {
+  console.log(`Server start at port ${PORT}!`);
 });
+
+app.use("/api/user", userRoutes);
