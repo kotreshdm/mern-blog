@@ -7,6 +7,9 @@ import Search from "./pages/Search";
 import SignUp from "./pages/SignUp";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { PageNotFound } from "./pages/PageNotFound";
+import PrivateRoute from "./components/PrivateRoute";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -18,7 +21,10 @@ function App() {
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/search' element={<Search />} />
-        <Route path='*' element={<Home />} />
+        <Route element={<PrivateRoute />}>
+          <Route path='/dashboard' element={<Dashboard />} />
+        </Route>
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
