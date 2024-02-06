@@ -26,13 +26,14 @@ function SignIn() {
       return dispatch(signInFailure("Please fill out all fields."));
     }
     try {
-      dispatch(signInStart);
+      // dispatch(signInStart());
+      console.log("fetch");
       const res = await fetch("/api/auth/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+      console.log(res);
       const data = await res.json();
       if (data.success === false) {
         dispatch(signInFailure(data.message));
