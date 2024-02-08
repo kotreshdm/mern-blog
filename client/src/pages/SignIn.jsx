@@ -27,7 +27,6 @@ function SignIn() {
     }
     try {
       // dispatch(signInStart());
-      console.log("fetch");
       const res = await fetch("/api/auth/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
