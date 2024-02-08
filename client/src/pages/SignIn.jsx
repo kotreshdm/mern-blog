@@ -33,7 +33,7 @@ function SignIn() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      console.log(res);
+
       const data = await res.json();
       if (data.success === false) {
         dispatch(signInFailure(data.message));

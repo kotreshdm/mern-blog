@@ -4,7 +4,7 @@ import {
   deleteUser,
   signout,
 } from "../controllers/user.controler.js";
-import { verifyToken } from "../utils.js/verifyUser.js";
+import { verifyToken } from "../utils/verifyUser.js";
 const router = express.Router();
 
 router.put("/update/:userId", verifyToken, updateUser);
