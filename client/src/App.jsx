@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import { PageNotFound } from "./pages/PageNotFound";
 import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
+import OnlyAdminPrivateRoute from "./components/OnlyAdminPrivateRoute";
+import CreatePost from "./pages/CreatePost";
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
         <Route path='/search' element={<Search />} />
         <Route element={<PrivateRoute />}>
           <Route path='/dashboard' element={<Dashboard />} />
+        </Route>
+        <Route element={<OnlyAdminPrivateRoute />}>
+          <Route path='/create-post' element={<CreatePost />} />
         </Route>
         <Route path='*' element={<PageNotFound />} />
       </Routes>
