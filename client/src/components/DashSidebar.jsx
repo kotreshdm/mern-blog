@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Sidebar } from "flowbite-react";
 import { Link } from "react-router-dom";
 import {
@@ -9,9 +9,10 @@ import {
   HiAnnotation,
   HiChartPie,
 } from "react-icons/hi";
-const DashSidebar = () => {
-  const currentUser = { name: "test", isAdmin: true };
-  const [tab, setTab] = useState("");
+import { useSelector } from "react-redux";
+const DashSidebar = ({ tab }) => {
+  const { currentUser } = useSelector((state) => state.user);
+
   const handleSignout = () => {};
   return (
     <Sidebar className='w-full md:w-56 min-h-screen'>
@@ -41,18 +42,16 @@ const DashSidebar = () => {
           </Link>
 
           {currentUser.isAdmin && (
-            <Link to='/dashboard?tab=posts'>
-              <Sidebar.Item
-                active={tab === "posts"}
-                icon={HiDocumentText}
-                as='div'
-              >
-                Posts
-              </Sidebar.Item>
-            </Link>
-          )}
-          {currentUser.isAdmin && (
             <>
+              <Link to='/dashboard?tab=posts'>
+                <Sidebar.Item
+                  active={tab === "posts"}
+                  icon={HiDocumentText}
+                  as='div'
+                >
+                  Posts
+                </Sidebar.Item>
+              </Link>
               <Link to='/dashboard?tab=users'>
                 <Sidebar.Item
                   active={tab === "users"}
