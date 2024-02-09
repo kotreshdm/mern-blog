@@ -2,24 +2,16 @@
   "name": "blog-mern",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon api/index.js",
     "start": "node api/index.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kotreshdm/mern-blog.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kotreshdm/mern-blog/issues"
-  },
-  "homepage": "https://github.com/kotreshdm/mern-blog#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
